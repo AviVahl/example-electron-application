@@ -1,7 +1,5 @@
 # Example Electron Application
 
-![Screenshot](/docs/screenshot.png)
-
 An example to showcase a typescript-based electron application.
 
 Uses native esm everywhere possible (`main` and `renderer`), as electron 28 now supports it. `preload` bundle is still commonjs to allow sandbox.
@@ -23,6 +21,16 @@ Showcases creation of a direct communication channel between the renderer and ma
 `npm run build:full` - runs `npm run build` and `npm run build:packed`.
 
 `npm run typecheck` - checks sources using typescript.
+
+## Screenshots
+
+### Dark Theme
+
+![Screenshot](docs/screenshot-dark.png)
+
+### Light Theme
+
+![Screenshot](docs/screenshot-light.png)
 
 ## Prerequisites for `build:full`
 
