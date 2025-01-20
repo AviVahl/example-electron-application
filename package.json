@@ -36,7 +36,7 @@
     "react-dom": "^19.0.0",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.21.0"
   },
   "keywords": [],
   "author": {
