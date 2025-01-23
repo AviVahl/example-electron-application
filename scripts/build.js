@@ -1,8 +1,8 @@
 // @ts-check
 
 import { build, context } from "esbuild";
-import { tailwindPlugin } from "esbuild-plugin-tailwindcss";
 import fs from "node:fs/promises";
+import { tailwindEsbuildPlugin } from "./tailwind-esbuild-plugin.js";
 
 const isWatch = process.argv.includes("--watch") || process.argv.includes("-w");
 const outPath = new URL("../dist/", import.meta.url);
@@ -50,7 +50,7 @@ const browserEsmBundle = {
   ...commonBuildOptions,
   format: "esm",
   entryPoints: ["src/renderer.tsx"],
-  plugins: [tailwindPlugin()],
+  plugins: [tailwindEsbuildPlugin],
 };
 
 /** @type {import('esbuild').BuildOptions} */
