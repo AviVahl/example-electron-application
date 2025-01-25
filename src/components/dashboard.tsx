@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
 import * as icons from "@heroicons/react/24/outline";
-import { Sidebar } from "./sidebar";
+import { useEffect, useState } from "react";
 import { Home } from "./home";
+import { KeyboardShortcutsModal } from "./keyboard-shortcuts-modal";
+import { SettingsPanel } from "./settings-panel";
+import { Sidebar } from "./sidebar";
 
 const menuItems: Sidebar.MenuItem[] = [
   { icon: icons.HomeIcon, name: "Home" },
@@ -18,6 +20,7 @@ export function Dashboard() {
   const [isExpanded, setIsExpanded] = useState(() => {
     return localStorage.getItem("sidebarExpanded") !== "false";
   });
+  const [isShortcutsModalOpen, setIsShortcutsModalOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("activeTab", activeTab);
@@ -27,8 +30,28 @@ export function Dashboard() {
     localStorage.setItem("sidebarExpanded", String(isExpanded));
   }, [isExpanded]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === ",") {
+        e.preventDefault();
+        setActiveTab("Settings");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "e") {
+        e.preventDefault();
+        setActiveTab("Home");
+      }
+      if (e.shiftKey && e.key === "?") {
+        e.preventDefault();
+        setIsShortcutsModalOpen(true);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen bg-gray-100 dark:bg-gray-800 transition-colors duration-200">
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -40,13 +63,24 @@ export function Dashboard() {
         className={`flex-1 p-6 overflow-auto transition-[margin-left] duration-300
         ${isExpanded ? "ml-64" : "ml-16"}`}
       >
-        {activeTab === "Home" && <Home />}
-        {activeTab !== "Home" && (
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
-            <p className="text-gray-600 dark:text-gray-300">Content for {activeTab} panel goes here</p>
-          </div>
-        )}
+        {renderActiveTabContent(activeTab)}
       </main>
+      {isShortcutsModalOpen && <KeyboardShortcutsModal onClose={() => setIsShortcutsModalOpen(false)} />}
     </div>
   );
 }
+
+const renderActiveTabContent = (activeTab: string) => {
+  switch (activeTab) {
+    case "Home":
+      return <Home />;
+    case "Settings":
+      return <SettingsPanel />;
+    default:
+      return (
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
+          <p className="text-gray-600 dark:text-gray-300">Content for {activeTab} panel goes here</p>
+        </div>
+      );
+  }
+};
