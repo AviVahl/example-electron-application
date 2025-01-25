@@ -1,8 +1,8 @@
 import * as icons from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import { Home } from "./home";
-import { KeyboardShortcutsModal } from "./keyboard-shortcuts-modal";
-import { SettingsPanel } from "./settings-panel";
+import { KeyboardShortcuts } from "./keyboard-shortcuts";
+import { Settings } from "./settings";
 import { Sidebar } from "./sidebar";
 
 const menuItems: Sidebar.MenuItem[] = [
@@ -65,7 +65,7 @@ export function Dashboard() {
       >
         {renderActiveTabContent(activeTab)}
       </main>
-      {isShortcutsModalOpen && <KeyboardShortcutsModal onClose={() => setIsShortcutsModalOpen(false)} />}
+      {isShortcutsModalOpen && <KeyboardShortcuts onClose={() => setIsShortcutsModalOpen(false)} />}
     </div>
   );
 }
@@ -75,7 +75,7 @@ const renderActiveTabContent = (activeTab: string) => {
     case "Home":
       return <Home />;
     case "Settings":
-      return <SettingsPanel />;
+      return <Settings />;
     default:
       return (
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">

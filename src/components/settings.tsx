@@ -7,7 +7,7 @@ interface AppSettings {
   notifications: boolean;
 }
 
-export const SettingsPanel: React.FC = () => {
+export const Settings: React.FC = () => {
   const [settings, setSettings] = React.useState<AppSettings>({
     theme: "system",
     autoSave: true,

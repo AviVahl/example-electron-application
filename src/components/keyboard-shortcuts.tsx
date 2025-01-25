@@ -1,7 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useEffect, useRef } from "react";
 
-export interface KeyboardShortcutsModalProps {
+export interface KeyboardShortcutsProps {
   onClose: () => void;
 }
 
@@ -11,7 +11,7 @@ const shortcuts = [
   { keys: ["Shift", "?"], description: "Show keyboard shortcuts" },
 ];
 
-export const KeyboardShortcutsModal: React.FC<KeyboardShortcutsModalProps> = ({ onClose }) => {
+export const KeyboardShortcuts: React.FC<KeyboardShortcutsProps> = ({ onClose }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
