@@ -47,19 +47,19 @@ export const Home: React.FC = memo(function Home() {
           Explore the application using the sidebar navigation. You&apos;ll find:
         </p>
         <ul className="space-y-4">
-          <li className="flex items-center space-x-4 text-lg text-gray-600 dark:text-gray-300">
+          <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
             <FolderIcon className="w-6 h-6 text-blue-500" />
             <span>Project management tools</span>
           </li>
-          <li className="flex items-center space-x-4 text-lg text-gray-600 dark:text-gray-300">
+          <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
             <ChartBarIcon className="w-6 h-6 text-blue-500" />
             <span>Analytics dashboard</span>
           </li>
-          <li className="flex items-center space-x-4 text-lg text-gray-600 dark:text-gray-300">
+          <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
             <ChatBubbleLeftRightIcon className="w-6 h-6 text-blue-500" />
             <span>Messaging system</span>
           </li>
-          <li className="flex items-center space-x-4 text-lg text-gray-600 dark:text-gray-300">
+          <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
             <Cog6ToothIcon className="w-6 h-6 text-blue-500" />
             <span>Application settings</span>
           </li>
