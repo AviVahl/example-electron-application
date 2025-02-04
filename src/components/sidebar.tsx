@@ -1,7 +1,6 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useMemo } from "react";
 
 import * as icons from "@heroicons/react/24/outline";
-import { Tooltip } from "./tooltip";
 
 export namespace Sidebar {
   export interface MenuItem {
@@ -26,17 +25,7 @@ export const Sidebar = memo(function Sidebar({
   setIsExpanded,
   menuItems,
 }: Sidebar.Props) {
-  const [activeTooltip, setActiveTooltip] = useState<string | undefined>(undefined);
-  const showTooltipTimeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
-
-  const clearTooltip = () => {
-    clearTimeout(showTooltipTimeoutRef.current);
-    showTooltipTimeoutRef.current = undefined;
-    setActiveTooltip(undefined);
-  };
-
   const toggleSidebar = useCallback(() => {
-    clearTooltip();
     setIsExpanded((prev) => !prev);
   }, [setIsExpanded]);
 
@@ -51,21 +40,8 @@ export const Sidebar = memo(function Sidebar({
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      clearTimeout(showTooltipTimeoutRef.current);
     };
   }, [toggleSidebar]);
-
-  const handleTooltipEnter = (name: string) => {
-    clearTimeout(showTooltipTimeoutRef.current);
-
-    if (activeTooltip) {
-      setActiveTooltip(name);
-    } else {
-      showTooltipTimeoutRef.current = setTimeout(() => {
-        setActiveTooltip(name);
-      }, 700);
-    }
-  };
 
   const { regularItems, stickyItems } = useMemo(
     () => ({
@@ -92,22 +68,18 @@ export const Sidebar = memo(function Sidebar({
         {isExpanded ? (
           <button
             onClick={toggleSidebar}
+            title="Minimize Sidebar"
             className="group relative p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-opacity duration-150"
-            onMouseEnter={() => handleTooltipEnter("minimize")}
-            onMouseLeave={clearTooltip}
           >
             <icons.XMarkIcon className="h-5 w-5" />
-            {activeTooltip === "minimize" && <Tooltip text="Minimize Sidebar" />}
           </button>
         ) : (
           <button
             onClick={toggleSidebar}
+            title="Expand Sidebar"
             className="group relative p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded flex items-center justify-center"
-            onMouseEnter={() => handleTooltipEnter("expand")}
-            onMouseLeave={clearTooltip}
           >
             <icons.ChevronRightIcon className="h-5 w-5" />
-            {activeTooltip === "expand" && <Tooltip text="Expand Sidebar" />}
           </button>
         )}
       </div>
@@ -116,8 +88,7 @@ export const Sidebar = memo(function Sidebar({
           <button
             key={name}
             onClick={() => setActiveTab(name)}
-            onMouseEnter={() => !isExpanded && handleTooltipEnter(name)}
-            onMouseLeave={clearTooltip}
+            title={!isExpanded ? name : undefined}
             className={`group relative w-full flex items-center px-5 py-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200
                       ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
           >
@@ -129,7 +100,6 @@ export const Sidebar = memo(function Sidebar({
             >
               {name}
             </span>
-            {!isExpanded && activeTooltip === name && <Tooltip text={name} />}
           </button>
         ))}
       </nav>
@@ -139,8 +109,7 @@ export const Sidebar = memo(function Sidebar({
             <button
               key={name}
               onClick={() => setActiveTab(name)}
-              onMouseEnter={() => !isExpanded && handleTooltipEnter(name)}
-              onMouseLeave={clearTooltip}
+              title={!isExpanded ? name : undefined}
               className={`group relative w-full flex items-center px-5 py-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200
                          ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
             >
@@ -152,7 +121,6 @@ export const Sidebar = memo(function Sidebar({
               >
                 {name}
               </span>
-              {!isExpanded && activeTooltip === name && <Tooltip text={name} />}
             </button>
           ))}
         </div>
