@@ -1,4 +1,4 @@
-/// @ts-check
+// @ts-check
 
 /** @type {import('app-builder-lib').Configuration} */
 module.exports = {
