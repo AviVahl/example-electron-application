@@ -77,7 +77,7 @@ const TechCard: React.FC<{
 }> = memo(function TechCard({ title, description, icon, version }) {
   return (
     <div className="p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-2 mb-6">
         <div className="text-4xl">{icon}</div>
         <div>
           <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
