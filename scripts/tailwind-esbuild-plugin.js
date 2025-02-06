@@ -15,7 +15,9 @@ export const tailwindEsbuildPlugin = {
 
       return {
         contents: result.css,
-        warnings: result.warnings().map((warning) => ({ pluginName: "tailwind-esbuild-plugin", text: warning.toString() })),
+        warnings: result
+          .warnings()
+          .map((warning) => ({ pluginName: "tailwind-esbuild-plugin", text: warning.toString() })),
         loader: "css",
       };
     });
