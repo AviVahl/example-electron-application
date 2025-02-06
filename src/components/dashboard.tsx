@@ -1,7 +1,11 @@
 import * as icons from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
+import { sampleProjects } from "../data/sample-projects";
+import { Analytics } from "./analytics";
 import { Home } from "./home";
 import { KeyboardShortcuts } from "./keyboard-shortcuts";
+import { Messages } from "./messages";
+import { Projects } from "./projects";
 import { Settings } from "./settings";
 import { Sidebar } from "./sidebar";
 
@@ -40,6 +44,18 @@ export function Dashboard() {
         e.preventDefault();
         setActiveTab("Home");
       }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "p") {
+        e.preventDefault();
+        setActiveTab("Projects");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "a") {
+        e.preventDefault();
+        setActiveTab("Analytics");
+      }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "m") {
+        e.preventDefault();
+        setActiveTab("Messages");
+      }
       if (e.shiftKey && e.key === "?") {
         e.preventDefault();
         setIsShortcutsModalOpen(true);
@@ -76,6 +92,12 @@ const renderActiveTabContent = (activeTab: string) => {
       return <Home />;
     case "Settings":
       return <Settings />;
+    case "Projects":
+      return <Projects projects={sampleProjects} />;
+    case "Analytics":
+      return <Analytics />;
+    case "Messages":
+      return <Messages />;
     default:
       return (
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
