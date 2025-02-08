@@ -9,7 +9,7 @@ export const tailwindEsbuildPlugin = {
   name: "tailwind-esbuild-plugin",
   setup(build) {
     build.onLoad({ filter: /\.css$/ }, async (args) => {
-      const result = await postcss([tailwindPostcss({ optimize: { minify: false } })]).process(
+      const result = await postcss([tailwindPostcss()]).process(
         await fs.readFile(args.path, "utf8"),
         { from: args.path },
       );
