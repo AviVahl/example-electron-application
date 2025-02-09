@@ -1,5 +1,6 @@
 import * as icons from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
+import { sampleAnalytics } from "../data/sample-analytics";
 import { sampleProjects } from "../data/sample-projects";
 import { Analytics } from "./analytics";
 import { Home } from "./home";
@@ -95,7 +96,7 @@ const renderActiveTabContent = (activeTab: string) => {
     case "Projects":
       return <Projects projects={sampleProjects} />;
     case "Analytics":
-      return <Analytics />;
+      return <Analytics data={sampleAnalytics} />;
     case "Messages":
       return <Messages />;
     default:
