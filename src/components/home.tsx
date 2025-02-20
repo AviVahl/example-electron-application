@@ -10,11 +10,11 @@ export const Home: React.FC = memo(function Home() {
   return (
     <div>
       <div className="pb-10">
-        <h1 className="text-5xl font-bold text-gray-800 dark:text-white mb-6">Example Electron Application</h1>
+        <h1 className="mb-6 text-5xl font-bold text-gray-800 dark:text-white">Example Electron Application</h1>
         <p className="text-2xl text-gray-600 dark:text-gray-300">A boilerplate to get started.</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 2xl:grid-cols-4">
         <TechCard
           title="Electron"
           description="Built on Electron framework, enabling cross-platform desktop applications using web technologies."
@@ -41,26 +41,26 @@ export const Home: React.FC = memo(function Home() {
         />
       </div>
 
-      <div className="mt-10 p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
-        <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-6">Getting Started</h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+      <div className="mt-10 rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-300 dark:border-gray-700 dark:bg-gray-800">
+        <h2 className="mb-6 text-3xl font-semibold text-gray-800 dark:text-white">Getting Started</h2>
+        <p className="mb-6 text-xl text-gray-600 dark:text-gray-300">
           Explore the application using the sidebar navigation. You&apos;ll find:
         </p>
         <ul className="space-y-4">
           <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
-            <FolderIcon className="w-6 h-6 text-blue-500" />
+            <FolderIcon className="h-6 w-6 text-blue-500" />
             <span>Project management tools</span>
           </li>
           <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
-            <ChartBarIcon className="w-6 h-6 text-blue-500" />
+            <ChartBarIcon className="h-6 w-6 text-blue-500" />
             <span>Analytics dashboard</span>
           </li>
           <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
-            <ChatBubbleLeftRightIcon className="w-6 h-6 text-blue-500" />
+            <ChatBubbleLeftRightIcon className="h-6 w-6 text-blue-500" />
             <span>Messaging system</span>
           </li>
           <li className="flex items-center gap-2 text-lg text-gray-600 dark:text-gray-300">
-            <Cog6ToothIcon className="w-6 h-6 text-blue-500" />
+            <Cog6ToothIcon className="h-6 w-6 text-blue-500" />
             <span>Application settings</span>
           </li>
         </ul>
@@ -76,8 +76,8 @@ const TechCard: React.FC<{
   version: string;
 }> = memo(function TechCard({ title, description, icon, version }) {
   return (
-    <div className="p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-      <div className="flex items-center gap-2 mb-6">
+    <div className="rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800">
+      <div className="mb-6 flex items-center gap-2">
         <div className="text-4xl">{icon}</div>
         <div>
           <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
@@ -85,7 +85,7 @@ const TechCard: React.FC<{
           </h3>
         </div>
       </div>
-      <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
+      <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">{description}</p>
     </div>
   );
 });

@@ -68,7 +68,7 @@ export function Dashboard() {
   }, []);
 
   return (
-    <div className="flex h-screen bg-gray-100 dark:bg-gray-800 transition-colors duration-200">
+    <div className="flex h-screen bg-gray-100 transition-colors duration-200 dark:bg-gray-800">
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -77,8 +77,7 @@ export function Dashboard() {
         menuItems={menuItems}
       />
       <main
-        className={`flex-1 p-6 overflow-auto transition-[margin-left] duration-300
-        ${isExpanded ? "ml-64" : "ml-16"}`}
+        className={`flex-1 overflow-auto p-6 transition-[margin-left] duration-300 ${isExpanded ? "ml-64" : "ml-16"}`}
       >
         {renderActiveTabContent(activeTab)}
       </main>
@@ -101,7 +100,7 @@ const renderActiveTabContent = (activeTab: string) => {
       return <Messages />;
     default:
       return (
-        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
+        <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-900">
           <p className="text-gray-600 dark:text-gray-300">Content for {activeTab} panel goes here</p>
         </div>
       );

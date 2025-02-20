@@ -34,7 +34,7 @@ export const LineChart: React.FC<ChartProps> = ({ data, labels, className }) => 
             cx={point.x}
             cy={point.y}
             r="4"
-            className="fill-blue-500 dark:fill-blue-400 hover:fill-blue-600 dark:hover:fill-blue-500"
+            className="fill-blue-500 hover:fill-blue-600 dark:fill-blue-400 dark:hover:fill-blue-500"
           >
             <title>{`${point.label}: ${point.value} commits`}</title>
           </circle>
@@ -66,7 +66,7 @@ export const BarChart: React.FC<ChartProps> = ({ data, labels, className }) => {
               y={y}
               width={barWidth}
               height={barHeight}
-              className="fill-indigo-500 dark:fill-indigo-400 hover:fill-indigo-600 dark:hover:fill-indigo-500"
+              className="fill-indigo-500 hover:fill-indigo-600 dark:fill-indigo-400 dark:hover:fill-indigo-500"
             >
               <title>{`${labels?.[i]}: ${value} commits`}</title>
             </rect>

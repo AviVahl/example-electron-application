@@ -27,20 +27,20 @@ export const KeyboardShortcuts: React.FC<{ onClose: () => void }> = ({ onClose }
   return (
     <dialog
       ref={dialogRef}
-      className="fixed inset-0 backdrop:bg-black/50 backdrop:backdrop-blur-sm bg-transparent p-0 m-auto max-w-md w-full rounded-lg h-fit"
+      className="fixed inset-0 m-auto h-fit w-full max-w-md rounded-lg bg-transparent p-0 backdrop:bg-black/50 backdrop:backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === dialogRef.current) onClose();
       }}
     >
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg w-full relative">
+      <div className="relative w-full rounded-lg bg-white p-8 shadow-lg dark:bg-gray-900">
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none"
+          className="absolute top-6 right-6 text-gray-500 hover:text-gray-700 focus:outline-none dark:text-gray-400 dark:hover:text-gray-200"
           aria-label="Close dialog"
         >
-          <XMarkIcon className="w-5 h-5" />
+          <XMarkIcon className="h-5 w-5" />
         </button>
-        <h2 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100 pr-8">Keyboard Shortcuts</h2>
+        <h2 className="mb-6 pr-8 text-xl font-semibold text-gray-900 dark:text-gray-100">Keyboard Shortcuts</h2>
         <div className="space-y-3">
           <ShortcutRow label="Home" shortcut="⌘/Ctrl + Shift + E" />
           <ShortcutRow label="Projects" shortcut="⌘/Ctrl + Shift + P" />
@@ -55,13 +55,13 @@ export const KeyboardShortcuts: React.FC<{ onClose: () => void }> = ({ onClose }
 };
 
 const KeyCode: React.FC<{ children: string }> = ({ children }) => (
-  <span className="inline-flex items-center justify-center min-w-[1.5rem] px-1.5 py-0.5 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded">
+  <span className="inline-flex min-w-[1.5rem] items-center justify-center rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 text-xs font-medium text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100">
     {children}
   </span>
 );
 
 const ShortcutRow: React.FC<{ label: string; shortcut: string }> = ({ label, shortcut }) => (
-  <div className="flex justify-between items-center">
+  <div className="flex items-center justify-between">
     <span className="text-gray-700 dark:text-gray-300">{label}</span>
     <div className="flex items-center gap-1 font-mono text-sm text-gray-500 dark:text-gray-400">
       {shortcut.split(" + ").map((key, i) => (

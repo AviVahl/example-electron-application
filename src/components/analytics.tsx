@@ -30,7 +30,7 @@ export const Analytics: React.FC<{ data: AnalyticsData }> = ({ data }) => {
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <StatCard
           icon={FolderIcon}
           title="Active Projects"
@@ -57,19 +57,19 @@ export const Analytics: React.FC<{ data: AnalyticsData }> = ({ data }) => {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow">
-          <h3 className="text-lg font-medium mb-4 dark:text-gray-200">Daily Activity</h3>
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-900">
+          <h3 className="mb-4 text-lg font-medium dark:text-gray-200">Daily Activity</h3>
           <div className="aspect-[2/1] w-full">
-            <LineChart data={data.dailyActivity} labels={dayLabels} className="w-full h-full" />
+            <LineChart data={data.dailyActivity} labels={dayLabels} className="h-full w-full" />
           </div>
           <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">Last 14 days</div>
         </div>
 
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow">
-          <h3 className="text-lg font-medium mb-4 dark:text-gray-200">Project Activity</h3>
+        <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-900">
+          <h3 className="mb-4 text-lg font-medium dark:text-gray-200">Project Activity</h3>
           <div className="aspect-[2/1] w-full">
-            <BarChart data={data.projectActivity} labels={data.projectLabels} className="w-full h-full" />
+            <BarChart data={data.projectActivity} labels={data.projectLabels} className="h-full w-full" />
           </div>
           <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">Commits per project</div>
         </div>
@@ -84,12 +84,12 @@ const StatCard: React.FC<{
   value: string;
   change: string;
 }> = ({ icon: Icon, title, value, change }) => (
-  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow">
+  <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-900">
     <div className="flex items-center justify-between">
-      <Icon className="w-6 h-6 text-gray-600 dark:text-gray-400" />
-      <span className="text-green-500 text-sm font-medium">{change}</span>
+      <Icon className="h-6 w-6 text-gray-600 dark:text-gray-400" />
+      <span className="text-sm font-medium text-green-500">{change}</span>
     </div>
-    <h3 className="text-2xl font-bold mt-4 dark:text-gray-200">{value}</h3>
-    <p className="text-gray-600 dark:text-gray-400 text-sm">{title}</p>
+    <h3 className="mt-4 text-2xl font-bold dark:text-gray-200">{value}</h3>
+    <p className="text-sm text-gray-600 dark:text-gray-400">{title}</p>
   </div>
 );

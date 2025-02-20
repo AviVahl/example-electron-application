@@ -19,25 +19,23 @@ export const Settings: React.FC = () => {
   };
 
   return (
-    <div className="p-6 flex justify-center">
-      <div className="max-w-2xl w-full space-y-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-        <h2 className="text-2xl font-semibold flex items-center gap-2">
-          <CogIcon className="w-6 h-6" />
+    <div className="flex justify-center p-6">
+      <div className="w-full max-w-2xl space-y-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <h2 className="flex items-center gap-2 text-2xl font-semibold">
+          <CogIcon className="h-6 w-6" />
           Settings
         </h2>
 
         <div className="space-y-4">
-          <div className="flex items-center space-x-4 p-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">
-            <div className="flex items-center gap-2 flex-1">
-              <ComputerDesktopIcon className="w-5 h-5" />
+          <div className="flex items-center space-x-4 rounded-lg p-2 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700">
+            <div className="flex flex-1 items-center gap-2">
+              <ComputerDesktopIcon className="h-5 w-5" />
               <span className="font-medium dark:text-gray-200">Theme</span>
             </div>
             <select
               value={settings.theme}
               onChange={(e) => handleChange("theme", e.target.value)}
-              className="w-32 rounded border border-gray-300 dark:border-gray-600 px-3 py-1 bg-white dark:bg-gray-800
-              text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400
-              focus:border-transparent outline-none"
+              className="w-32 rounded border border-gray-300 bg-white px-3 py-1 text-gray-900 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:focus:ring-blue-400"
             >
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -46,11 +44,11 @@ export const Settings: React.FC = () => {
           </div>
 
           <div
-            className="flex items-center space-x-4 p-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors cursor-pointer"
+            className="flex cursor-pointer items-center space-x-4 rounded-lg p-2 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
             onClick={() => handleChange("notifications", !settings.notifications)}
           >
-            <div className="flex items-center gap-2 flex-1">
-              <BellIcon className="w-5 h-5" />
+            <div className="flex flex-1 items-center gap-2">
+              <BellIcon className="h-5 w-5" />
               <span className="font-medium dark:text-gray-200">Notifications</span>
             </div>
             <button
@@ -60,7 +58,7 @@ export const Settings: React.FC = () => {
                 e.stopPropagation();
                 handleChange("notifications", !settings.notifications);
               }}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none ${
                 settings.notifications ? "bg-blue-600" : "bg-gray-300 dark:bg-gray-600"
               }`}
             >
@@ -73,11 +71,11 @@ export const Settings: React.FC = () => {
           </div>
 
           <div
-            className="flex items-center space-x-4 p-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors cursor-pointer"
+            className="flex cursor-pointer items-center space-x-4 rounded-lg p-2 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
             onClick={() => handleChange("autoSave", !settings.autoSave)}
           >
-            <div className="flex items-center gap-2 flex-1">
-              <DocumentArrowDownIcon className="w-5 h-5" />
+            <div className="flex flex-1 items-center gap-2">
+              <DocumentArrowDownIcon className="h-5 w-5" />
               <span className="font-medium dark:text-gray-200">Auto-save</span>
             </div>
             <button
@@ -87,7 +85,7 @@ export const Settings: React.FC = () => {
                 e.stopPropagation();
                 handleChange("autoSave", !settings.autoSave);
               }}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none ${
                 settings.autoSave ? "bg-blue-600" : "bg-gray-300 dark:bg-gray-600"
               }`}
             >

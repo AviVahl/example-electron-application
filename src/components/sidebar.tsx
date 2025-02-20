@@ -53,14 +53,12 @@ export const Sidebar = memo(function Sidebar({
 
   return (
     <div
-      className={`h-screen fixed flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white
-                    transition-[width] duration-300 ease-in-out
-                    ${isExpanded ? "w-64" : "w-16"}`}
+      className={`fixed flex h-screen flex-col bg-gray-100 text-gray-900 transition-[width] duration-300 ease-in-out dark:bg-gray-900 dark:text-white ${isExpanded ? "w-64" : "w-16"}`}
     >
-      <div className="px-5 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+      <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4 dark:border-gray-700">
         <div
           className={`transition-opacity duration-150 ${
-            isExpanded ? "opacity-100 visible w-full" : "opacity-0 invisible w-0 absolute"
+            isExpanded ? "visible w-full opacity-100" : "invisible absolute w-0 opacity-0"
           }`}
         >
           <h1 className="text-xl font-bold">Example</h1>
@@ -69,7 +67,7 @@ export const Sidebar = memo(function Sidebar({
           <button
             onClick={toggleSidebar}
             title="Minimize Sidebar"
-            className="group relative p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-opacity duration-150"
+            className="group relative rounded p-1 transition-opacity duration-150 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
             <icons.XMarkIcon className="h-5 w-5" />
           </button>
@@ -77,7 +75,7 @@ export const Sidebar = memo(function Sidebar({
           <button
             onClick={toggleSidebar}
             title="Expand Sidebar"
-            className="group relative p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded flex items-center justify-center"
+            className="group relative flex items-center justify-center rounded p-1 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
             <icons.ChevronRightIcon className="h-5 w-5" />
           </button>
@@ -89,13 +87,12 @@ export const Sidebar = memo(function Sidebar({
             key={name}
             onClick={() => setActiveTab(name)}
             title={!isExpanded ? name : undefined}
-            className={`group relative w-full flex items-center px-5 py-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200
-                      ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
+            className={`group relative flex w-full items-center px-5 py-4 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
           >
             <Icon className="h-6 w-6 min-w-[24px]" />
             <span
               className={`ml-4 whitespace-nowrap transition-opacity duration-150 ${
-                isExpanded ? "opacity-100 visible relative" : "opacity-0 invisible absolute"
+                isExpanded ? "visible relative opacity-100" : "invisible absolute opacity-0"
               }`}
             >
               {name}
@@ -110,13 +107,12 @@ export const Sidebar = memo(function Sidebar({
               key={name}
               onClick={() => setActiveTab(name)}
               title={!isExpanded ? name : undefined}
-              className={`group relative w-full flex items-center px-5 py-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200
-                         ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
+              className={`group relative flex w-full items-center px-5 py-4 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
             >
               <Icon className="h-6 w-6 min-w-[24px]" />
               <span
                 className={`ml-4 whitespace-nowrap transition-opacity duration-150 ${
-                  isExpanded ? "opacity-100 visible relative" : "opacity-0 invisible absolute"
+                  isExpanded ? "visible relative opacity-100" : "invisible absolute opacity-0"
                 }`}
               >
                 {name}

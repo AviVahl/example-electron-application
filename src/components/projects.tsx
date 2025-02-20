@@ -16,37 +16,31 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">Projects</h1>
+      <h1 className="mb-8 text-3xl font-bold text-gray-800 dark:text-white">Projects</h1>
       <div className="flex flex-wrap gap-6">
         {projects.map((project) => (
           <div
             key={project.path}
-            className="w-80 h-80 bg-white dark:bg-gray-800 rounded-xl shadow-lg
-            hover:shadow-2xl transition-all duration-300 border border-gray-100
-            dark:border-gray-700 p-6 flex flex-col"
+            className="flex h-80 w-80 flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800"
           >
-            <div className="flex items-start justify-between mb-4">
-              <div className="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <FolderIcon className="w-8 h-8 text-gray-600 dark:text-gray-300" />
+            <div className="mb-4 flex items-start justify-between">
+              <div className="rounded-lg bg-gray-100 p-3 dark:bg-gray-700">
+                <FolderIcon className="h-8 w-8 text-gray-600 dark:text-gray-300" />
               </div>
-              <button
-                className="text-gray-400 hover:text-gray-600 dark:text-gray-500
-                dark:hover:text-gray-300 transition-colors"
-              >
-                <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+              <button className="text-gray-400 transition-colors hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300">
+                <ArrowTopRightOnSquareIcon className="h-5 w-5" />
               </button>
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">{project.name}</h3>
+            <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">{project.name}</h3>
 
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 truncate">{project.path}</p>
+            <p className="mb-4 truncate text-sm text-gray-500 dark:text-gray-400">{project.path}</p>
 
-            <div className="flex gap-2 mb-4 flex-wrap">
+            <div className="mb-4 flex flex-wrap gap-2">
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700
-                  text-gray-600 dark:text-gray-300"
+                  className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-300"
                 >
                   {tech}
                 </span>
@@ -54,7 +48,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             </div>
 
             <div className="mt-auto flex items-center text-sm text-gray-500 dark:text-gray-400">
-              <ClockIcon className="w-4 h-4 mr-1" />
+              <ClockIcon className="mr-1 h-4 w-4" />
               Last opened {formatDate(project.lastOpened)}
             </div>
           </div>

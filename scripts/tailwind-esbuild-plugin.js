@@ -9,10 +9,8 @@ export const tailwindEsbuildPlugin = {
   name: "tailwind-esbuild-plugin",
   setup(build) {
     build.onLoad({ filter: /\.css$/ }, async (args) => {
-      const result = await postcss([tailwindPostcss()]).process(
-        await fs.readFile(args.path, "utf8"),
-        { from: args.path },
-      );
+      const fileContents = await fs.readFile(args.path, "utf8");
+      const result = await postcss([tailwindPostcss()]).process(fileContents, { from: args.path });
 
       return {
         contents: result.css,
