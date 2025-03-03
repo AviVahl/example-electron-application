@@ -1,5 +1,5 @@
 import { FolderIcon, ClockIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { Project } from "../data/sample-projects";
+import type { Project } from "../data/sample-projects";
 
 export interface ProjectsProps {
   projects: Project[];
