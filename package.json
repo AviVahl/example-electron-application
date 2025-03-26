@@ -24,7 +24,7 @@
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "electron": "^35.1.0",
-    "electron-builder": "^25.1.8",
+    "electron-builder": "^26.0.12",
     "esbuild": "^0.25.1",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
