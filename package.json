@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/postcss": "^4.1.3",
+    "@tailwindcss/postcss": "^4.1.4",
     "@types/node": "22",
-    "@types/react": "^19.1.1",
+    "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "electron": "^35.1.5",
     "electron-builder": "^26.0.12",
@@ -35,9 +35,9 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.3",
+    "tailwindcss": "^4.1.4",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.29.1"
+    "typescript-eslint": "^8.30.1"
   },
   "keywords": [],
   "author": {
