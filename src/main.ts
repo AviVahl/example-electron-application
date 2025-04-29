@@ -12,6 +12,8 @@ if (process.platform === "linux" && process.env.NODE_ENV === "development") {
 }
 
 if (app.requestSingleInstanceLock()) {
+  // workaround https://github.com/electron/electron/issues/46538
+  app.commandLine.appendSwitch("gtk-version", "3");
   initializeApp();
 } else {
   console.log("Opening in existing app session.");

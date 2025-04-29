@@ -23,7 +23,7 @@
     "@types/node": "22",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "electron": "^35.2.1",
+    "electron": "^36.0.0",
     "electron-builder": "^26.0.12",
     "esbuild": "^0.25.3",
     "eslint": "^9.25.1",
@@ -37,7 +37,7 @@
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.4",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.31.0"
+    "typescript-eslint": "^8.31.1"
   },
   "keywords": [],
   "author": {
