@@ -20,8 +20,8 @@
   "devDependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.1.7",
-    "@types/node": "^22.15.21",
-    "@types/react": "^19.1.5",
+    "@types/node": "^22.15.23",
+    "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "electron": "^36.3.1",
     "electron-builder": "^26.0.12",
@@ -37,7 +37,7 @@
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.7",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.32.1"
+    "typescript-eslint": "^8.33.0"
   },
   "keywords": [],
   "author": {
