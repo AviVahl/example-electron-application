@@ -20,9 +20,9 @@
   "devDependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.1.8",
-    "@types/node": "^22.15.29",
+    "@types/node": "^22.15.30",
     "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
+    "@types/react-dom": "^19.1.6",
     "electron": "^36.4.0",
     "electron-builder": "^26.0.12",
     "esbuild": "^0.25.5",
