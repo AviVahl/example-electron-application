@@ -41,8 +41,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "Wix.com",
-    "email": "example-electron-application@wix.com"
+    "name": "Avi Vahl",
+    "email": "electron-application@example.com"
   },
   "license": "MIT",
   "private": true

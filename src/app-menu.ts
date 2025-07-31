@@ -28,7 +28,7 @@ export const setApplicationMenu = () => {
                 .showMessageBox(window, {
                   title: "About",
                   message: `${app.getName()} v${app.getVersion()}`,
-                  detail: `by Wix.com`,
+                  detail: `by Avi Vahl`,
                   type: "info",
                   buttons: ["Close"],
                 })
