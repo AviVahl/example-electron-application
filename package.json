@@ -22,7 +22,7 @@
     "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "22",
     "@types/react": "^19.1.11",
-    "@types/react-dom": "^19.1.7",
+    "@types/react-dom": "^19.1.8",
     "electron": "^37.3.1",
     "electron-builder": "^26.0.12",
     "esbuild": "^0.25.9",
