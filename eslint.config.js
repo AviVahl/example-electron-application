@@ -9,12 +9,11 @@ import pluginTypescript from "typescript-eslint";
 export default defineConfig([
   globalIgnores(["dist/", "out/"]),
   pluginJs.configs.recommended,
-  { plugins: { "react-hooks": pluginReactHooks } },
+  pluginReactHooks.configs.flat.recommended,
   {
     rules: {
       "no-undef": "off",
       "no-unused-vars": ["error", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
-      "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
     },
   },
