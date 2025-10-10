@@ -3,11 +3,11 @@
 import pluginJs from "@eslint/js";
 import configPrettier from "eslint-config-prettier";
 import pluginReactHooks from "eslint-plugin-react-hooks";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import pluginTypescript from "typescript-eslint";
 
 export default defineConfig([
-  { ignores: ["dist/", "out/"] },
+  globalIgnores(["dist/", "out/"]),
   pluginJs.configs.recommended,
   { plugins: { "react-hooks": pluginReactHooks } },
   {
