@@ -22,7 +22,7 @@
     "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "22",
     "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1",
+    "@types/react-dom": "^19.2.2",
     "electron": "^38.2.2",
     "electron-builder": "^26.0.12",
     "esbuild": "^0.25.10",
@@ -37,7 +37,7 @@
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.14",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.0"
+    "typescript-eslint": "^8.46.1"
   },
   "keywords": [],
   "author": {
