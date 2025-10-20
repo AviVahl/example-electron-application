@@ -14,7 +14,7 @@ export const Home: React.FC = memo(function Home() {
         <p className="text-2xl text-gray-600 dark:text-gray-300">A boilerplate to get started.</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 2xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 2xl:grid-cols-4">
         <TechCard
           title="Electron"
           description="Built on Electron framework, enabling cross-platform desktop applications using web technologies."
