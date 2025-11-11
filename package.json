@@ -21,7 +21,7 @@
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "22",
-    "@types/react": "^19.2.2",
+    "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.2",
     "electron": "^39.1.2",
     "electron-builder": "^26.0.12",
