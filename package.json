@@ -23,7 +23,7 @@
     "@types/node": "22",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
-    "electron": "^39.2.0",
+    "electron": "^39.2.1",
     "electron-builder": "^26.0.12",
     "esbuild": "^0.27.0",
     "eslint": "^9.39.1",
