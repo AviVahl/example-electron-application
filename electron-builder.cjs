@@ -1,8 +1,5 @@
 // @ts-check
 
-// needed for RPM building on Fedora 41+
-process.env.USE_SYSTEM_FPM = "true";
-
 /** @type {import('app-builder-lib').Configuration} */
 module.exports = {
   appId: "com.example.app",
@@ -12,7 +9,7 @@ module.exports = {
     output: "out",
   },
   linux: {
-    target: ["AppImage", "deb", "snap", "zip", "tar.xz" /*, "rpm" */],
+    target: ["AppImage", "deb", "snap", "zip", "tar.xz" , "rpm"],
     category: "Utility",
   },
   win: {

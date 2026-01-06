@@ -34,7 +34,7 @@ Showcases creation of a direct communication channel between the renderer and ma
 
 ## Prerequisites for `build:full`
 
-On a freshly installed Fedora 41, with all updates:
+On a freshly installed Fedora 43, with all updates:
 
 To build `.deb`:
 
@@ -45,8 +45,7 @@ sudo dnf install dpkg fakeroot libxcrypt-compat
 To build `.rpm`:
 
 ```sh
-sudo dnf install rpm-build rubygems
-gem install fpm
+sudo dnf install rpm-build
 ```
 
 ## License
