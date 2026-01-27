@@ -20,7 +20,6 @@
   "devDependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.1.18",
-    "@types/node": "24",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
     "electron": "^40.0.0",
@@ -45,5 +44,10 @@
     "email": "electron-application@example.com"
   },
   "license": "MIT",
-  "private": true
+  "private": true,
+  "overrides": {
+    "@types/node": "24.10.3",
+    "@electron/rebuild": "4.0.3",
+    "tar": "7.5.6"
+  }
 }
