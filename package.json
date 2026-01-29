@@ -22,7 +22,7 @@
     "@tailwindcss/postcss": "^4.1.18",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
-    "electron": "^40.0.0",
+    "electron": "^40.1.0",
     "electron-builder": "^26.6.0",
     "esbuild": "^0.27.2",
     "eslint": "^9.39.2",
@@ -44,8 +44,5 @@
     "email": "electron-application@example.com"
   },
   "license": "MIT",
-  "private": true,
-  "overrides": {
-    "@types/node": "24.10.3"
-  }
+  "private": true
 }
