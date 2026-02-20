@@ -6,11 +6,6 @@ const multipleWindowsAllowed = true;
 
 Menu.setApplicationMenu(null); // https://www.electronjs.org/docs/latest/tutorial/performance
 
-if (process.platform === "linux" && process.env.NODE_ENV === "development") {
-  // to not see: "ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for <x> times"
-  app.disableHardwareAcceleration();
-}
-
 if (app.requestSingleInstanceLock()) {
   initializeApp();
 } else {
