@@ -18,6 +18,7 @@
     "prettify": "prettier --write ."
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/react": "^19.2.14",
@@ -25,9 +26,9 @@
     "electron": "^40.6.1",
     "electron-builder": "^26.8.1",
     "esbuild": "^0.27.3",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-hooks": "7.1.0-canary-e0cc7202-20260227",
     "playwright": "^1.58.2",
     "postcss": "^8.5.6",
     "prettier": "^3.8.1",
