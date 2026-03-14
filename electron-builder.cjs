@@ -9,7 +9,7 @@ module.exports = {
     output: "out",
   },
   linux: {
-    target: ["AppImage", "deb", "snap", "zip", "tar.xz" , "rpm"],
+    target: ["AppImage", "deb", "snap", "zip", "tar.xz", "rpm"],
     category: "Utility",
   },
   win: {
