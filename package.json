@@ -6,7 +6,7 @@
   "main": "./dist/main.js",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.ts",
     "build:watch": "npm run build -- -w",
     "build:full": "npm run build && npm run build:packed",
     "start": "electron .",

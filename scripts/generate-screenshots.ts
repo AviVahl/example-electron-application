@@ -1,9 +1,7 @@
-// @ts-check
-
 import { fileURLToPath } from "node:url";
 import { _electron as electron } from "playwright";
 
-for (const colorScheme of /** @type {const} */ (["light", "dark"])) {
+for (const colorScheme of ["light", "dark"] as const) {
   const app = await electron.launch({ args: ["."], colorScheme });
   const window = await app.firstWindow();
   await window.waitForLoadState("load");

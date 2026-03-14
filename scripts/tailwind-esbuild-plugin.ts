@@ -1,11 +1,9 @@
-// @ts-check
-
-import fs from "node:fs/promises";
 import tailwindPostcss from "@tailwindcss/postcss";
+import type * as esbuild from "esbuild";
+import fs from "node:fs/promises";
 import postcss from "postcss";
 
-/** @type {import("esbuild").Plugin} */
-export const tailwindEsbuildPlugin = {
+export const tailwindEsbuildPlugin: esbuild.Plugin = {
   name: "tailwind-esbuild-plugin",
   setup(build) {
     build.onLoad({ filter: /\.css$/ }, async (args) => {

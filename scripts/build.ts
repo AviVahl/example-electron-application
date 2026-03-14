@@ -1,15 +1,12 @@
-// @ts-check
-
-import { build, context } from "esbuild";
+import * as esbuild from "esbuild";
 import fs from "node:fs/promises";
-import { tailwindEsbuildPlugin } from "./tailwind-esbuild-plugin.js";
+import { tailwindEsbuildPlugin } from "./tailwind-esbuild-plugin.ts";
 
 const isWatch = process.argv.includes("--watch") || process.argv.includes("-w");
 const outPath = new URL("../dist/", import.meta.url);
 const publicPath = new URL("../public/", import.meta.url);
 
-/** @type {import('esbuild').BuildOptions} */
-const commonBuildOptions = {
+const commonBuildOptions: esbuild.BuildOptions = {
   logLevel: "info",
   color: true,
   outdir: "dist",
@@ -37,24 +34,21 @@ const commonBuildOptions = {
   external: ["electron/common", "electron/renderer", "electron/main", "electron/utility"],
 };
 
-/** @type {import('esbuild').BuildOptions} */
-const nodeEsmBundles = {
+const nodeEsmBundles: esbuild.BuildOptions = {
   platform: "node",
   ...commonBuildOptions,
   format: "esm",
   entryPoints: ["src/main.ts"],
 };
 
-/** @type {import('esbuild').BuildOptions} */
-const browserEsmBundle = {
+const browserEsmBundle: esbuild.BuildOptions = {
   ...commonBuildOptions,
   format: "esm",
   entryPoints: ["src/renderer.tsx"],
   plugins: [tailwindEsbuildPlugin],
 };
 
-/** @type {import('esbuild').BuildOptions} */
-const browserCjsPreloadBundle = {
+const browserCjsPreloadBundle: esbuild.BuildOptions = {
   ...commonBuildOptions,
   format: "cjs",
   entryPoints: ["src/preload.ts"],
@@ -69,8 +63,8 @@ await fs.cp(publicPath, outPath, { recursive: true });
 const bundles = [nodeEsmBundles, browserEsmBundle, browserCjsPreloadBundle];
 
 if (isWatch) {
-  const buildContexts = await Promise.all(bundles.map((bundle) => context(bundle)));
+  const buildContexts = await Promise.all(bundles.map((bundle) => esbuild.context(bundle)));
   await Promise.all(buildContexts.map((context) => context.watch()));
 } else {
-  await Promise.all(bundles.map((bundle) => build(bundle)));
+  await Promise.all(bundles.map((bundle) => esbuild.build(bundle)));
 }
