@@ -60,7 +60,7 @@ export const Analytics: React.FC<{ data: AnalyticsData }> = ({ data }) => {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-900">
           <h3 className="mb-4 text-lg font-medium dark:text-gray-200">Daily Activity</h3>
-          <div className="aspect-[2/1] w-full">
+          <div className="aspect-2/1 w-full">
             <LineChart data={data.dailyActivity} labels={dayLabels} className="h-full w-full" />
           </div>
           <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">Last 14 days</div>
@@ -68,7 +68,7 @@ export const Analytics: React.FC<{ data: AnalyticsData }> = ({ data }) => {
 
         <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-900">
           <h3 className="mb-4 text-lg font-medium dark:text-gray-200">Project Activity</h3>
-          <div className="aspect-[2/1] w-full">
+          <div className="aspect-2/1 w-full">
             <BarChart data={data.projectActivity} labels={data.projectLabels} className="h-full w-full" />
           </div>
           <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">Commits per project</div>

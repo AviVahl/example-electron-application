@@ -55,7 +55,7 @@ export const KeyboardShortcuts: React.FC<{ onClose: () => void }> = ({ onClose }
 };
 
 const KeyCode: React.FC<{ children: string }> = ({ children }) => (
-  <span className="inline-flex min-w-[1.5rem] items-center justify-center rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 text-xs font-medium text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100">
+  <span className="inline-flex min-w-6 items-center justify-center rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 text-xs font-medium text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100">
     {children}
   </span>
 );
