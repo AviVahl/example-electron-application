@@ -28,7 +28,7 @@
     "esbuild": "^0.28.0",
     "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-hooks": "7.1.0-canary-56824423-20260414",
+    "eslint-plugin-react-hooks": "^7.1.0",
     "playwright": "^1.59.1",
     "postcss": "^8.5.10",
     "prettier": "^3.8.3",
@@ -36,7 +36,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.2",
-    "typescript": "~6.0.2",
+    "typescript": "~6.0.3",
     "typescript-eslint": "^8.58.2"
   },
   "keywords": [],
