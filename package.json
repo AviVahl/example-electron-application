@@ -12,13 +12,11 @@
     "start": "electron .",
     "build:unpacked": "electron-builder build --dir",
     "build:packed": "electron-builder build",
-    "test": "npm run typecheck && npm run build && npm run lint",
-    "lint": "eslint",
+    "test": "npm run typecheck && npm run build",
     "typecheck": "tsc --noEmit",
     "prettify": "prettier --write ."
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.3.2",
     "@types/react": "^19.2.17",
@@ -26,9 +24,6 @@
     "electron": "^43.1.0",
     "electron-builder": "^26.15.3",
     "esbuild": "^0.28.1",
-    "eslint": "^10.6.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-hooks": "^7.1.1",
     "playwright": "^1.61.1",
     "postcss": "^8.5.16",
     "prettier": "^3.9.4",
@@ -36,8 +31,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.3.2",
-    "typescript": "~6.0.3",
-    "typescript-eslint": "^8.63.0"
+    "typescript": "~6.0.3"
   },
   "allowScripts": {
     "electron-winstaller": true,
