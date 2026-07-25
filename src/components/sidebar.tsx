@@ -87,7 +87,7 @@ export const Sidebar = memo(function Sidebar({
             key={name}
             onClick={() => setActiveTab(name)}
             title={!isExpanded ? name : undefined}
-            className={`group relative flex w-full items-center px-5 py-4 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
+            className={`group relative flex w-full items-center px-5 py-4 hover:bg-gray-200 dark:hover:bg-gray-700 ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
           >
             <Icon className="h-6 w-6 min-w-6" />
             <span
@@ -107,7 +107,7 @@ export const Sidebar = memo(function Sidebar({
               key={name}
               onClick={() => setActiveTab(name)}
               title={!isExpanded ? name : undefined}
-              className={`group relative flex w-full items-center px-5 py-4 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
+              className={`group relative flex w-full items-center px-5 py-4 hover:bg-gray-200 dark:hover:bg-gray-700 ${activeTab === name ? "bg-gray-200 dark:bg-gray-700" : ""}`}
             >
               <Icon className="h-6 w-6 min-w-6" />
               <span

@@ -21,13 +21,13 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         {projects.map((project) => (
           <div
             key={project.path}
-            className="flex h-80 w-80 flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800"
+            className="flex h-80 w-80 flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800"
           >
             <div className="mb-4 flex items-start justify-between">
               <div className="rounded-lg bg-gray-100 p-3 dark:bg-gray-700">
                 <FolderIcon className="h-8 w-8 text-gray-600 dark:text-gray-300" />
               </div>
-              <button className="text-gray-400 transition-colors hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300">
+              <button className="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300">
                 <ArrowTopRightOnSquareIcon className="h-5 w-5" />
               </button>
             </div>

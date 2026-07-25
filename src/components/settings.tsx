@@ -27,7 +27,7 @@ export const Settings: React.FC = () => {
         </h2>
 
         <div className="space-y-4">
-          <div className="flex items-center space-x-4 rounded-lg p-2 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700">
+          <div className="flex items-center space-x-4 rounded-lg p-2 hover:bg-gray-50 dark:hover:bg-gray-700">
             <div className="flex flex-1 items-center gap-2">
               <ComputerDesktopIcon className="h-5 w-5" />
               <span className="font-medium dark:text-gray-200">Theme</span>
@@ -44,7 +44,7 @@ export const Settings: React.FC = () => {
           </div>
 
           <div
-            className="flex cursor-pointer items-center space-x-4 rounded-lg p-2 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
+            className="flex cursor-pointer items-center space-x-4 rounded-lg p-2 hover:bg-gray-50 dark:hover:bg-gray-700"
             onClick={() => handleChange("notifications", !settings.notifications)}
           >
             <div className="flex flex-1 items-center gap-2">
@@ -58,7 +58,7 @@ export const Settings: React.FC = () => {
                 e.stopPropagation();
                 handleChange("notifications", !settings.notifications);
               }}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none ${
+              className={`relative inline-flex h-6 w-11 items-center rounded-full focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none ${
                 settings.notifications ? "bg-blue-600" : "bg-gray-300 dark:bg-gray-600"
               }`}
             >
@@ -71,7 +71,7 @@ export const Settings: React.FC = () => {
           </div>
 
           <div
-            className="flex cursor-pointer items-center space-x-4 rounded-lg p-2 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
+            className="flex cursor-pointer items-center space-x-4 rounded-lg p-2 hover:bg-gray-50 dark:hover:bg-gray-700"
             onClick={() => handleChange("autoSave", !settings.autoSave)}
           >
             <div className="flex flex-1 items-center gap-2">
@@ -85,7 +85,7 @@ export const Settings: React.FC = () => {
                 e.stopPropagation();
                 handleChange("autoSave", !settings.autoSave);
               }}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none ${
+              className={`relative inline-flex h-6 w-11 items-center rounded-full focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none ${
                 settings.autoSave ? "bg-blue-600" : "bg-gray-300 dark:bg-gray-600"
               }`}
             >

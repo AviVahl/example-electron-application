@@ -41,7 +41,7 @@ export const Home: React.FC = memo(function Home() {
         />
       </div>
 
-      <div className="mt-10 rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-300 dark:border-gray-700 dark:bg-gray-800">
+      <div className="mt-10 rounded-xl border border-gray-100 bg-white p-8 shadow-lg dark:border-gray-700 dark:bg-gray-800">
         <h2 className="mb-6 text-3xl font-semibold text-gray-800 dark:text-white">Getting Started</h2>
         <p className="mb-6 text-xl text-gray-600 dark:text-gray-300">
           Explore the application using the sidebar navigation. You&apos;ll find:
@@ -76,7 +76,7 @@ const TechCard: React.FC<{
   version: string;
 }> = memo(function TechCard({ title, description, icon, version }) {
   return (
-    <div className="rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800">
+    <div className="rounded-xl border border-gray-100 bg-white p-8 shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800">
       <div className="mb-6 flex items-center gap-2">
         <div className="text-4xl">{icon}</div>
         <div>

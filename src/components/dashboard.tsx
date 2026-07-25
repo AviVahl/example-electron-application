@@ -68,7 +68,7 @@ export function Dashboard() {
   }, []);
 
   return (
-    <div className="flex h-screen bg-gray-100 transition-colors duration-200 dark:bg-gray-800">
+    <div className="flex h-screen bg-gray-100 dark:bg-gray-800">
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
