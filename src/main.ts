@@ -51,7 +51,9 @@ async function createWindow() {
     },
     width: 1024,
     height: 768,
+    show: false,
   });
+  win.once("ready-to-show", () => win.show());
   await win.loadFile(fileURLToPath(new URL("index.html", import.meta.url)));
 }
 
