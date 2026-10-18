@@ -25,7 +25,7 @@
     "electron-builder": "^27.0.0-alpha.10",
     "esbuild": "^0.28.2",
     "playwright": "^1.64.1",
-    "postcss": "^8.5.30",
+    "postcss": "^8.5.31",
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "react": "^19.3.1",
