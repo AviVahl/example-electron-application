@@ -4,7 +4,9 @@
 module.exports = {
   appId: "com.example.app",
   asar: false,
-  files: ["dist/**/*"],
+  fileOptions: {
+    files: ["dist/**/*"],
+  },
   directories: {
     output: "out",
   },
