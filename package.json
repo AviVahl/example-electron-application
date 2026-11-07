@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/postcss": "^4.3.4",
+    "@tailwindcss/postcss": "^4.3.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "electron": "^45.2.3",
@@ -30,7 +30,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "tailwindcss": "^4.3.4",
+    "tailwindcss": "^4.3.5",
     "typescript": "~7.0.2"
   },
   "allowScripts": {
